@@ -6,19 +6,19 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/03 15:23:47 by abeznik       #+#    #+#                  #
-#    Updated: 2021/10/05 19:37:59 by abeznik       ########   odam.nl          #
+#    Updated: 2021/10/05 19:38:41 by abeznik       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libftprintf.a
 
-SOURCES	=	ft_printf.c $\
-			pf_conversions.c $\
-			pf_hex_conv.c $\
-			pf_hexlong_conv.c $\
-			pf_format_print.c $\
-			pf_u_print.c $\
-			pf_utoa.c $\
+SOURCES	=	ft_printf.c \
+			pf_conversions.c \
+			pf_hex_conv.c \
+			pf_hexlong_conv.c \
+			pf_format_print.c \
+			pf_u_print.c \
+			pf_utoa.c \
 
 SRC_DIR	=	srcs
 
