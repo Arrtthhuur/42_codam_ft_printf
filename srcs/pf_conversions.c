@@ -6,14 +6,14 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/02 13:06:02 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/04 22:32:03 by anonymous     ########   odam.nl         */
+/*   Updated: 2021/10/05 17:31:00 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 
 /*
-File with all the conversion formats using va_arg
+** File with all the conversion formats using va_arg
 */
 
 char	ft_format_c(va_list args)

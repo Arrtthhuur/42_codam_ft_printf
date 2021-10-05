@@ -6,70 +6,92 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/03 15:23:47 by abeznik       #+#    #+#                  #
-#    Updated: 2021/10/04 22:37:58 by anonymous     ########   odam.nl          #
+#    Updated: 2021/10/05 19:15:46 by abeznik       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-UTILS	=	./utils/utils.a
-
 NAME	=	libftprintf.a
 
-SOURCES	=	ft_printf.c \
-			pf_conversions.c \
-			pf_hex_conv.c \
-			pf_hexlong_conv.c \
-			pf_format_print.c \
-			pf_u_print.c \
-			pf_utoa.c \
+SOURCES	=	ft_printf.c $\
+			pf_conversions.c $\
+			pf_hex_conv.c $\
+			pf_hexlong_conv.c $\
+			pf_format_print.c $\
+			pf_u_print.c $\
+			pf_utoa.c $\
 
 SRC_DIR	=	srcs
 
+UTILS	=	ft_intlen.c \
+			ft_putchar.c \
+			ft_putnbr.c \
+			ft_putstr.c \
+			ft_strlen.c \
+			ft_tolower.c \
+
+UTL_DIR	=	utils
+
 OBJ_DIR	=	obj
+
+TST_DIR	=	tester
 
 HEADER	=	includes
 
-SRCS = $(addprefix $(SRC_DIR)/,$(SOURCES))
+SRCS 	=	$(addprefix $(SRC_DIR)/,$(SOURCES))
+OBJ_S 	=	$(patsubst %, $(OBJ_DIR)/srcs/%, $(SOURCES:.c=.o))
 
-OBJS = $(addprefix $(OBJ_DIR)/,$(SOURCES:.c=.o))
+UTLS	=	$(addprefix $(UTL_DIR)/,$(UTILS))
+OBJ_U 	=	$(patsubst %, $(OBJ_DIR)/utils/%, $(UTILS:.c=.o))
 
 CC		=	gcc
 RM		=	rm -f
-FLAGS	=	-I. -Werror -Wextra -Wall
+FLAGS	=	-Werror -Wextra -Wall
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS)
-	make -C ./utils
-	cp $(UTILS) $(NAME)
-	ar cr $(NAME) $(OBJS)
+$(NAME):	$(OBJ_S) $(OBJ_U)
+	ar cr $(NAME) $(OBJ_S) $(OBJ_U)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)/libftprintf.h
-	@mkdir -p obj
+$(OBJ_DIR)/srcs/%.o: $(SRC_DIR)/%.c
+	@mkdir -p obj/srcs
+	$(CC) -c $(FLAGS) -I $(HEADER) -o $@ $<
+
+$(OBJ_DIR)/utils/%.o: $(UTL_DIR)/%.c
+	@mkdir -p obj/utils
 	$(CC) -c $(FLAGS) -I $(HEADER) -o $@ $<
 
 norme:
-	@make norme -C ./utils
 	norminette ./$(SRC_DIR)
+	norminette ./$(UTL_DIR)
 	norminette ./$(HEADER)
 
-printf:
-	$(CC) $(SRCS) misc/main.c $(NAME) && ./a.out
+test:	all
+	$(CC) $(NAME) $(TST_DIR)/pf_tester.c 
+	./a.out
 
-debug:
-	$(CC) -g3 $(SRCS) misc/main.c $(NAME)
+leaks:	all
+	$(CC) -g $(NAME) $(TST_DIR)/pf_leaks.c
+	./a.out
+
+debug:	all
+	$(CC) -g3 $(SRCS) $(UTLS) $(TST_DIR)/pf_tester.c
+	lldb a.out
+
+debug1:	all
+	$(CC) -g3 $(SRCS) $(UTLS) $(TST_DIR)/pf_main.c
 	lldb a.out
 
 clean:
-	@make clean -C ./utils
-	$(RM) $(OBJS)
-	$(RM) -r $(OBJ_DIR)
+	$(RM) $(OBJ_S) $(OBJ_U)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	make fclean -C ./utils
 	$(RM) $(NAME)
 
 del:	fclean
 	$(RM) *.out
+	$(RM) *.o
+	rm -rf *.dSYM
 
 re: fclean all
 
@@ -175,4 +197,4 @@ coffee:
 	@echo '                      """------"""'
 	@echo "Mmmmmh your coffee is so hot right now *puts hands around it*"
 
-.PHONY: fclean re norme all clean
+.PHONY: fclean re all clean

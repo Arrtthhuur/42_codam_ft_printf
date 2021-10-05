@@ -6,20 +6,20 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/29 18:39:38 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/04 22:33:14 by anonymous     ########   odam.nl         */
+/*   Updated: 2021/10/05 17:30:55 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 
 /*
-File with unsigned long long to hex conversion and print
+** File with unsigned long long to hex conversion and print
 */
 
 static int	ft_print_hex(char *hexadecimalnum, int j)
 {
 	int	i;
-	int count;
+	int	count;
 
 	i = j - 1;
 	count = ft_strlen(hexadecimalnum);

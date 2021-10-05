@@ -6,14 +6,14 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/29 18:39:38 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/04 22:32:57 by anonymous     ########   odam.nl         */
+/*   Updated: 2021/10/05 17:30:51 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 
 /*
-File with unsigned int to hex conversion and print
+** File with unsigned int to hex conversion and print
 */
 
 static int	ft_print_hex(char *hexadecimalnum, int j, int format)

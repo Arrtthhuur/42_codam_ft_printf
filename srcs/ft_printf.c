@@ -6,11 +6,15 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 18:40:57 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/04 17:08:29 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/05 17:58:37 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
+
+/*
+** File with ft_printf and parsing functions
+*/
 
 static int	ft_parsing(va_list args, const char *fmt, int len)
 {

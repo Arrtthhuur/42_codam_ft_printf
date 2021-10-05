@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/28 15:53:54 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/04 21:44:23 by anonymous     ########   odam.nl         */
+/*   Updated: 2021/10/05 12:26:31 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 # include <stdlib.h>
 
 size_t	ft_intlen(long n);
-
-char	*ft_itoa(int n);
 
 void	ft_putchar(char c);
 
