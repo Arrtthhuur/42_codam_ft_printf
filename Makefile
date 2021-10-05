@@ -6,7 +6,7 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/03 15:23:47 by abeznik       #+#    #+#                  #
-#    Updated: 2021/10/05 19:15:46 by abeznik       ########   odam.nl          #
+#    Updated: 2021/10/05 19:36:07 by abeznik       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,27 +60,6 @@ $(OBJ_DIR)/utils/%.o: $(UTL_DIR)/%.c
 	@mkdir -p obj/utils
 	$(CC) -c $(FLAGS) -I $(HEADER) -o $@ $<
 
-norme:
-	norminette ./$(SRC_DIR)
-	norminette ./$(UTL_DIR)
-	norminette ./$(HEADER)
-
-test:	all
-	$(CC) $(NAME) $(TST_DIR)/pf_tester.c 
-	./a.out
-
-leaks:	all
-	$(CC) -g $(NAME) $(TST_DIR)/pf_leaks.c
-	./a.out
-
-debug:	all
-	$(CC) -g3 $(SRCS) $(UTLS) $(TST_DIR)/pf_tester.c
-	lldb a.out
-
-debug1:	all
-	$(CC) -g3 $(SRCS) $(UTLS) $(TST_DIR)/pf_main.c
-	lldb a.out
-
 clean:
 	$(RM) $(OBJ_S) $(OBJ_U)
 	rm -rf $(OBJ_DIR)
@@ -88,113 +67,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-del:	fclean
-	$(RM) *.out
-	$(RM) *.o
-	rm -rf *.dSYM
-
 re: fclean all
-
-coffee:
-	@clear
-	@echo ""
-	@echo "                   ("
-	@echo "	                     )     ("
-	@echo "               ___...(-------)-....___"
-	@echo '           .-""       )    (          ""-.'
-	@echo "      .-''''|-._             )         _.-|"
-	@echo '     /  .--.|   `""---...........---""`   |'
-	@echo "    /  /    |                             |"
-	@echo "    |  |    |                             |"
-	@echo "     \  \   |                             |"
-	@echo "      '\ '\ |                             |"
-	@echo "        '\ '|                             |"
-	@echo "        _/ /\                             /"
-	@echo "       (__/  \                           /"
-	@echo '    _..---""` \                         /`""---.._'
-	@echo " .-'           \                       /          '-."
-	@echo ":               '-.__             __.-'              :"
-	@echo ':                  ) ""---...---"" (                :'
-	@echo "\'._                '"--...___...--"'              _.'"
-	@echo '   \""--..__                              __..--""/'
-	@echo "     '._     """----.....______.....----"""         _.'"
-	@echo '         ""--..,,_____            _____,,..--"""'''
-	@echo '                      """------"""'
-	@sleep 0.5
-	@clear
-	@echo ""
-	@echo "                 ("
-	@echo "	                  )      ("
-	@echo "               ___..(.------)--....___"
-	@echo '           .-""       )   (           ""-.'
-	@echo "      .-''''|-._      (       )        _.-|"
-	@echo '     /  .--.|   `""---...........---""`   |'
-	@echo "    /  /    |                             |"
-	@echo "    |  |    |                             |"
-	@echo "     \  \   |                             |"
-	@echo "      '\ '\ |                             |"
-	@echo "        '\ '|                             |"
-	@echo "        _/ /\                             /"
-	@echo "       (__/  \                           /"
-	@echo '    _..---""` \                         /`""---.._'
-	@echo " .-'           \                       /          '-."
-	@echo ":               '-.__             __.-'              :"
-	@echo ':                  ) ""---...---"" (                :'
-	@echo "\'._                '"--...___...--"'              _.'"
-	@echo '   \""--..__                              __..--""/'
-	@echo "     '._     """----.....______.....----"""         _.'"
-	@echo '         ""--..,,_____            _____,,..--"""'''
-	@echo '                      """------"""'
-	@sleep 0.5
-	@clear
-	@echo ""
-	@echo "               ("
-	@echo "	                  )     ("
-	@echo "               ___..(.------)--....___"
-	@echo '           .-""      )    (           ""-.'
-	@echo "      .-''''|-._      (       )        _.-|"
-	@echo '     /  .--.|   `""---...........---""`   |'
-	@echo "    /  /    |                             |"
-	@echo "    |  |    |                             |"
-	@echo "     \  \   |                             |"
-	@echo "      '\ '\ |                             |"
-	@echo "        '\ '|                             |"
-	@echo "        _/ /\                             /"
-	@echo "       (__/  \                           /"
-	@echo '    _..---""` \                         /`""---.._'
-	@echo " .-'           \                       /          '-."
-	@echo ":               '-.__             __.-'              :"
-	@echo ':                  ) ""---...---"" (                :'
-	@echo "\'._                '"--...___...--"'              _.'"
-	@echo '   \""--..__                              __..--""/'
-	@echo "     '._     """----.....______.....----"""         _.'"
-	@echo '         ""--..,,_____            _____,,..--"""'''
-	@echo '                      """------"""'
-	@sleep 0.5
-	@clear
-	@echo ""
-	@echo "             (         ) "
-	@echo "	              )        ("
-	@echo "               ___)...----)----....___"
-	@echo '           .-""      )    (           ""-.'
-	@echo "      .-''''|-._      (       )        _.-|"
-	@echo '     /  .--.|   `""---...........---""`   |'
-	@echo "    /  /    |                             |"
-	@echo "    |  |    |                             |"
-	@echo "     \  \   |                             |"
-	@echo "      '\ '\ |                             |"
-	@echo "        '\ '|                             |"
-	@echo "        _/ /\                             /"
-	@echo "       (__/  \                           /"
-	@echo '    _..---""` \                         /`""---.._'
-	@echo " .-'           \                       /          '-."
-	@echo ":               '-.__             __.-'              :"
-	@echo ':                  ) ""---...---"" (                :'
-	@echo "\'._                '"--...___...--"'              _.'"
-	@echo '   \""--..__                              __..--""/'
-	@echo "     '._     """----.....______.....----"""         _.'"
-	@echo '         ""--..,,_____            _____,,..--"""'''
-	@echo '                      """------"""'
-	@echo "Mmmmmh your coffee is so hot right now *puts hands around it*"
 
 .PHONY: fclean re all clean

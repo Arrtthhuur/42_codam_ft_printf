@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 18:43:17 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/05 14:06:34 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/05 19:26:33 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define LIBFTPRINTF_H
 
 # include "utils.h"
-# include <stdarg.h>
+
+# include <stdarg.h> // va_arg
 
 int					ft_printf(const char *str, ...);
 

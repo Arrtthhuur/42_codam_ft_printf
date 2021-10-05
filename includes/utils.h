@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/28 15:53:54 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/05 12:26:31 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/05 19:26:23 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "libftprintf.h"
 
-# include <stdlib.h>
+# include <stdlib.h> // size_t
 
 size_t	ft_intlen(long n);
 
