@@ -6,7 +6,7 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/03 15:23:47 by abeznik       #+#    #+#                  #
-#    Updated: 2021/10/05 19:36:07 by abeznik       ########   odam.nl          #
+#    Updated: 2021/10/05 19:37:59 by abeznik       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,6 @@ UTILS	=	ft_intlen.c \
 UTL_DIR	=	utils
 
 OBJ_DIR	=	obj
-
-TST_DIR	=	tester
 
 HEADER	=	includes
 
