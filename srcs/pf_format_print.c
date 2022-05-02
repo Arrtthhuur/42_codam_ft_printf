@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/02 13:25:07 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/05 17:31:07 by abeznik       ########   odam.nl         */
+/*   Updated: 2022/04/17 16:33:02 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,12 @@ int	ft_pprintf(va_list args)
 	return (count);
 }
 
-int	ft_uxXprintf(va_list args, const char *fmt, int len)
+int	ft_uxxprintf(va_list args, const char *fmt, int len)
 {
 	unsigned int	ui;
 	int				count;
 
-	ui = ft_format_uxX(args);
+	ui = ft_format_uxx(args);
 	if (ui == 0)
 	{
 		ft_putchar('0');

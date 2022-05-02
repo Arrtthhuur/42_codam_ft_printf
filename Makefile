@@ -6,7 +6,7 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/03 15:23:47 by abeznik       #+#    #+#                  #
-#    Updated: 2021/10/05 19:38:41 by abeznik       ########   odam.nl          #
+#    Updated: 2022/04/13 13:04:20 by abeznik       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,15 +48,18 @@ FLAGS	=	-Werror -Wextra -Wall
 all:		$(NAME)
 
 $(NAME):	$(OBJ_S) $(OBJ_U)
-	ar cr $(NAME) $(OBJ_S) $(OBJ_U)
+	@echo "Creating archive $(NAME)"
+	@ar cr $(NAME) $(OBJ_S) $(OBJ_U)
 
 $(OBJ_DIR)/srcs/%.o: $(SRC_DIR)/%.c
 	@mkdir -p obj/srcs
-	$(CC) -c $(FLAGS) -I $(HEADER) -o $@ $<
+	@echo "compiling $(notdir $(basename $@))"
+	@$(CC) -c $(FLAGS) -I $(HEADER) -o $@ $<
 
 $(OBJ_DIR)/utils/%.o: $(UTL_DIR)/%.c
 	@mkdir -p obj/utils
-	$(CC) -c $(FLAGS) -I $(HEADER) -o $@ $<
+	@echo "compiling $(notdir $(basename $@))"
+	@$(CC) -c $(FLAGS) -I $(HEADER) -o $@ $<
 
 clean:
 	$(RM) $(OBJ_S) $(OBJ_U)

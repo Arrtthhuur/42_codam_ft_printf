@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 18:40:57 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/05 17:58:37 by abeznik       ########   odam.nl         */
+/*   Updated: 2022/04/17 16:38:31 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ft_parsing(va_list args, const char *fmt, int len)
 		count += ft_pprintf(args);
 	else if (fmt[len] == 'x' || fmt[len] == 'X'
 		|| fmt[len] == 'u')
-		count += ft_uxXprintf(args, fmt, len);
+		count += ft_uxxprintf(args, fmt, len);
 	else if (fmt[len] == '%')
 	{
 		ft_putchar('%');

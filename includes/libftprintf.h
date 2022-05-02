@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 18:43:17 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/05 19:26:33 by abeznik       ########   odam.nl         */
+/*   Updated: 2022/04/17 16:33:18 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ unsigned long long	ft_format_p(va_list args);
 
 int					ft_format_di(va_list args);
 
-unsigned int		ft_format_uxX(va_list args);
+unsigned int		ft_format_uxx(va_list args);
 
 /*
 ** Printing functions
@@ -45,7 +45,7 @@ int					ft_diprintf(va_list args);
 
 int					ft_pprintf(va_list args);
 
-int					ft_uxXprintf(va_list args, const char *fmt, int len);
+int					ft_uxxprintf(va_list args, const char *fmt, int len);
 
 int					ft_uprintf(unsigned int ui);
 

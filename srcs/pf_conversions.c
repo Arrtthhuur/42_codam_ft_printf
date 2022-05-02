@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/02 13:06:02 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/05 17:31:00 by abeznik       ########   odam.nl         */
+/*   Updated: 2022/04/17 16:32:49 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_format_s(va_list args)
 	return (s);
 }
 
-unsigned int	ft_format_uxX(va_list args)
+unsigned int	ft_format_uxx(va_list args)
 {
 	unsigned int	ui;
 
